@@ -1,0 +1,66 @@
+[
+  {
+    "region_name": "Kokiri Forest",
+    "scene": "Kokiri Forest",
+    "events": {
+      "Showed Mido Sword and Shield": "ShowedMidoSwordAndShield || (isChild && canUse(Kokiri Sword) && canUse(Deku Shield))"
+    },
+    "locations": {
+      "KF Kokiri Sword Chest": "isChild",
+      "KF GS Know It All House": "isChild && canAttack && atNight && (canLeaveForest || canUse(Suns Song)) && canGetNightTimeGS",
+      "KF GS Bean Patch": "canSpawnSoilSkull && canAttack",
+      "KF GS House of Twins": "isAdult && atNight && (hookshotOrBoomerang ||(getTrick(KF_ADULT_GS) && canUse(Hover Boots))) && canGetNightTimeGS",
+      "KF Gossip Stone": "true"
+    },
+    "exits": {
+      "KF Links House": "true",
+      "KF Midos House": "true",
+      "KF Sarias House": "true",
+      "KF House of Twins": "true",
+      "KF Know it All House": "true",
+      "KF Kokiri Shop": "true",
+      "KF Outside Deku Tree": "(isAdult && (canPassEnemy(Big Skulltula) || forestTempleClear)) || ForestOpen || showedMidoSwordAndShield",
+      "The Lost Woods": "true",
+      "LW Bridge From Forest": "isAdult || ForestIsNotClosed || dekuTreeClear",
+      "KF Storms Grotto": "canOpenStormsGrotto"
+    }
+  },
+  {
+    "region_name": "KF Outside Deku Tree",
+    "scene": "Kokiri Forest",
+    "events": {
+      "Showed Mido Sword and Shield": "ShowedMidoSwordAndShield || (isChild && canUse(Kokiri Sword) && canUse(Deku Shield))"
+    },
+    "locations": {
+      "KF Deku Tree Left Gossip Stone": "true",
+      "KF Deku Tree Right Gossip Stone": "true"
+    },
+    "exits": {
+      "Deku Tree Entryway": "isChild || (ShuffleDungeonEntrancesIsNotOff && (ForestIsOpen || ShowedMidoSwordAndShield))",
+      "Kokiri Forest": "(isAdult && (canPass(Big Skulltula) || forestTempleClear)) || ForestIsOpen || ShowedMidoSwordAndShield"
+    }
+  },
+  {
+    "region_name": "KF Link's House",
+    "scene": "KF Link's House",
+    "locations": {
+      "KF Links House Cow": "isAdult && canUse(Eponas Song) && linksCow"
+    },
+    "exits": {
+      "Kokiri Forest": "true"
+    }
+  },
+  {
+    "region_name": "KF Mido's House",
+    "scene": "KF Mido's House",
+    "locations": {
+      "KF Midos Top Left Chest": "true",
+      "KF Midos Top Right Chest": "true",
+      "KF Midos Bottom Left Chest": "true",
+      "KF Midos Bottom Right Chest": "true"
+    },
+    "exits": {
+      "Kokiri Forest": "true"
+    }
+  }
+]
